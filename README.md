@@ -2,7 +2,11 @@
 
 A TypeScript library that makes error handling less painful than stepping on a LEGO barefoot.
 
-![Gemini_Generated_Image_rvc8fnrvc8fnrvc8 (1)](https://github.com/user-attachments/assets/a88cb327-0e3e-4ae9-baa4-dae6cc4740b2)
+![Reach Design Flip](https://github.com/user-attachments/assets/a88cb327-0e3e-4ae9-baa4-dae6cc4740b2)
+
+![npm version](https://img.shields.io/npm/v/@reachdesign/flip?style=for-the-badge&logo=npm&color=red)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 ## Installation
 
