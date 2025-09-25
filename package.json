@@ -1,6 +1,6 @@
 {
   "name": "@reachdesign/flip",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A TypeScript library for elegant error handling using result types with ok/err pattern",
   "main": "dist/index.js",
   "module": "dist/index.js",
