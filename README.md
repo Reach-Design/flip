@@ -20,33 +20,65 @@ Because nobody likes `try-catch` blocks that look like a pyramid scheme. Instead
 
 ## Usage
 
-### Coffee Check ☕
+### Pizza Counter �
 
 ```typescript
 import { Flip } from '@reachdesign/flip';
 
-function needsCoffee(cups: number): Flip.R<string, string> {
-  if (cups < 2) return Flip.err("Zombie mode activated!");
-  return Flip.ok("Human mode unlocked ✨");
+function countSlices(pizzas: number): Flip.R<number, string> {
+  if (pizzas === 0) return Flip.err("No pizza, no life! 😭");
+  return Flip.ok(pizzas * 8);
 }
 
-const result = needsCoffee(1);
-console.log(Flip.isOk(result) ? Flip.v(result) : Flip.e(result));
-// "Zombie mode activated 🧟‍♂️"
+const slices = countSlices(0);
+// Result: "No pizza, no life! 😭"
 ```
 
-
-### WiFi Mood 📶
+### Cat Mood 😸
 
 ```typescript
-async function connectWifi(password: string): Promise<Flip.R<string, string>> {
-  if (password === "password123") return Flip.err("Seriously? 🤦‍♂️");
-  await new Promise(resolve => setTimeout(resolve, 100)); // "connecting"
-  return Flip.ok("Internet magic activated! ✨");
+function checkCat(treats: number): Flip.R<boolean, string> {
+  if (treats < 3) return Flip.err("Cat is plotting revenge 😾");
+  return Flip.ok(true); // Happy cat!
+}
+```
+
+### Async Coffee ☕
+
+```typescript
+async function brewCoffee(beans: number): Promise<Flip.R<string, Error>> {
+  if (beans === 0) return Flip.err(new Error("Zombie mode ON 🧟‍♂️"));
+  return Flip.ok("☕ Ready!");
+}
+```
+
+### User Finder �
+
+```typescript
+interface User { id: number; name: string; }
+enum UserError { NotFound, InvalidId }
+
+function findUser(id: number): Flip.R<User, UserError> {
+  if (id < 1) return Flip.err(UserError.InvalidId);
+  if (id > 1000) return Flip.err(UserError.NotFound);
+  return Flip.ok({ id, name: `User${id}` });
 }
 
-const connection = await connectWifi("password123");
-// Result: "Seriously? 🤦‍♂️"
+const user = findUser(0);
+// Result type: Flip.R<User, UserError>
+```
+
+### Parse Number 🔢
+
+```typescript
+async function parseNumber(text: string): Promise<Flip.R<number, string>> {
+  const num = parseInt(text);
+  if (isNaN(num)) return Flip.err("Not a number, genius! 🤓");
+  return Flip.ok(num);
+}
+
+const parsed = await parseNumber("abc");
+// Value type: number, Error type: string
 ```
 
 ## API Reference
