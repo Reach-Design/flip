@@ -12,7 +12,7 @@ npm install @reachdesign/flip
 
 ## Why Flip?
 
-Because nobody likes `try-catch` blocks that look like a pyramid scheme. Instead of throwing tantrums (I mean exceptions), functions return a `Flip.R<E, T>` that's either "Yay, it worked!" or "Oops, something went sideways."
+Because nobody likes `try-catch` blocks that look like a pyramid scheme. Instead of throwing tantrums (I mean exceptions), functions return a `Flip.R<T, E>` that's either "Yay, it worked!" or "Oops, something went sideways."
 
 ## Usage
 
@@ -49,18 +49,18 @@ const connection = await connectWifi("password123");
 
 ### Types
 
-- `Flip.R<E, T>`: A result type that's either `{ ok: true, value: T }` (success) or `{ ok: false, error: E }` (error)
+- `Flip.R<T, E>`: A result type that's either `{ ok: true, value: T }` (success) or `{ ok: false, error: E }` (error)
 
 ### Functions
 
 - `Flip.ok<T>(value: T)`: Creates a successful result (like finding money in your old jeans)
 - `Flip.err<E>(error: E)`: Creates an error result (like realizing it was just a receipt)
-- `Flip.v<E, T>(result: Flip.R<E, T>)`: Extracts the value from success (throws if error - handle with care!)
-- `Flip.e<E, T>(result: Flip.R<E, T>)`: Extracts the error from failure (throws if success - also handle with care!)
-- `Flip.isOk<E, T>(result: Flip.R<E, T>)`: Checks if result is successful (type-safe way to check)
-- `Flip.isErr<E, T>(result: Flip.R<E, T>)`: Checks if result is an error (for when things go sideways)
-- `Flip.isOk<E, T>(result: Promise<Flip.R<E, T>>)`: Async version for promise results
-- `Flip.isErr<E, T>(result: Promise<Flip.R<E, T>>)`: Async version for promise results
+- `Flip.v<T, E>(result: Flip.R<T, E>)`: Extracts the value from success (throws if error - handle with care!)
+- `Flip.e<T, E>(result: Flip.R<T, E>)`: Extracts the error from failure (throws if success - also handle with care!)
+- `Flip.isOk<T, E>(result: Flip.R<T, E>)`: Checks if result is successful (type-safe way to check)
+- `Flip.isErr<T, E>(result: Flip.R<T, E>)`: Checks if result is an error (for when things go sideways)
+- `Flip.isOk<T, E>(result: Promise<Flip.R<T, E>>)`: Async version for promise results
+- `Flip.isErr<T, E>(result: Promise<Flip.R<T, E>>)`: Async version for promise results
 
 ## Benefits
 
