@@ -1,0 +1,38 @@
+{
+  "name": "@reachdesign/flip",
+  "version": "1.0.0",
+  "description": "A TypeScript library for elegant error handling using result types with ok/err pattern",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Reach-Design/flip.git"
+  },
+  "keywords": [
+    "errors",
+    "errorhandling"
+  ],
+  "author": "Nithin Stephen Raphael",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Reach-Design/flip/issues"
+  },
+  "homepage": "https://github.com/Reach-Design/flip#readme",
+  "devDependencies": {
+    "@types/node": "^24.5.2",
+    "typescript": "^5.9.2"
+  }
+}

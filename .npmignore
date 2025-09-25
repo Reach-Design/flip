@@ -1,0 +1,27 @@
+# Source files
+src/
+tsconfig.json
+
+# Development files
+.gitignore
+.eslintrc*
+.prettierrc*
+jest.config*
+*.test.ts
+*.spec.ts
+__tests__/
+
+# Build artifacts
+*.tsbuildinfo
+
+# Editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
