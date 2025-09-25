@@ -19,9 +19,6 @@ npm install @reachdesign/flip
 Because nobody likes `try-catch` blocks that look like a pyramid scheme. Instead of throwing tantrums (I mean exceptions), functions return a `Flip.R<T, E>` that's either "Yay, it worked!" or "Oops, something went sideways."
 
 ## Usage
-
-### Pizza Counter �
-
 ```typescript
 import { Flip } from '@reachdesign/flip';
 
@@ -30,8 +27,9 @@ function countSlices(pizzas: number): Flip.R<number, string> {
   return Flip.ok(pizzas * 8);
 }
 
-const slices = countSlices(0);
-// Result: "No pizza, no life! 😭"
+const result = countSlices(0);
+console.log(Flip.isErr(result) ? Flip.e(result) : Flip.v(result));
+// "No pizza, no life! 😭"
 ```
 
 ### Cat Mood 😸
@@ -39,8 +37,12 @@ const slices = countSlices(0);
 ```typescript
 function checkCat(treats: number): Flip.R<boolean, string> {
   if (treats < 3) return Flip.err("Cat is plotting revenge 😾");
-  return Flip.ok(true); // Happy cat!
+  return Flip.ok(true);
 }
+
+const result = checkCat(2);
+console.log(Flip.isOk(result) ? "Happy cat!" : Flip.e(result));
+// "Cat is plotting revenge 😾"
 ```
 
 ### Async Coffee ☕
@@ -50,35 +52,11 @@ async function brewCoffee(beans: number): Promise<Flip.R<string, Error>> {
   if (beans === 0) return Flip.err(new Error("Zombie mode ON 🧟‍♂️"));
   return Flip.ok("☕ Ready!");
 }
-```
 
-### User Finder �
+const result = await brewCoffee(0);
+console.log(Flip.isOk(result) ? Flip.v(result) : Flip.e(result).message);
+// "Zombie mode ON 🧟‍♂️"
 
-```typescript
-interface User { id: number; name: string; }
-enum UserError { NotFound, InvalidId }
-
-function findUser(id: number): Flip.R<User, UserError> {
-  if (id < 1) return Flip.err(UserError.InvalidId);
-  if (id > 1000) return Flip.err(UserError.NotFound);
-  return Flip.ok({ id, name: `User${id}` });
-}
-
-const user = findUser(0);
-// Result type: Flip.R<User, UserError>
-```
-
-### Parse Number 🔢
-
-```typescript
-async function parseNumber(text: string): Promise<Flip.R<number, string>> {
-  const num = parseInt(text);
-  if (isNaN(num)) return Flip.err("Not a number, genius! 🤓");
-  return Flip.ok(num);
-}
-
-const parsed = await parseNumber("abc");
-// Value type: number, Error type: string
 ```
 
 ## API Reference
