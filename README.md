@@ -1,6 +1,8 @@
-# Flip 🔄
+# Flip 
 
 A TypeScript library that makes error handling less painful than stepping on a LEGO barefoot.
+
+![Gemini_Generated_Image_rvc8fnrvc8fnrvc8 (1)](https://github.com/user-attachments/assets/a88cb327-0e3e-4ae9-baa4-dae6cc4740b2)
 
 ## Installation
 
