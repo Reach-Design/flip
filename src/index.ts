@@ -51,15 +51,4 @@ export namespace Flip {
   }
 }
 
-// Default export with direct access to functions
-const FlipDefault = {
-  ok: Flip.ok,
-  err: Flip.err,
-  v: Flip.v,
-  e: Flip.e,
-  isOk: Flip.isOk,
-  isErr: Flip.isErr,
-  R: {} as any, // Type placeholder
-};
 
-export default FlipDefault;
