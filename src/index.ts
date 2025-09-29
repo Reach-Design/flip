@@ -50,5 +50,3 @@ export namespace Flip {
     return !res.ok;
   }
 }
-
-
