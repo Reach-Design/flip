@@ -14,6 +14,19 @@ A TypeScript library that makes error handling less painful than stepping on a L
 npm install @reachdesign/flip
 ```
 
+## Skill
+
+This repository includes a reusable skill for Reach Design Flip at [`skills/reachdesign-flip-error-handling`](skills/reachdesign-flip-error-handling).
+
+Install it in the current workspace with:
+
+```bash
+npx skills add Reach-Design/flip --skill reachdesign-flip-error-handling
+```
+
+The skill provides guidance for explicit Flip error handling, including reading successful values with `Flip.v(...)` and errors with `Flip.e(...)`.
+
+
 ## Why Flip?
 
 Because nobody likes `try-catch` blocks that look like a pyramid scheme. Instead of throwing tantrums (I mean exceptions), functions return a `Flip.R<T, E>` that's either "Yay, it worked!" or "Oops, something went sideways."
