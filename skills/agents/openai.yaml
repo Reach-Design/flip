@@ -1,0 +1,4 @@
+interface:
+  display_name: ReachDesign Flip Error Handling
+  short_description: Add, refactor, and review TypeScript error handling with @reachdesign/flip result types.
+  default_prompt: Use ReachDesign Flip to refactor this TypeScript code into explicit ok/err result-based error handling.
